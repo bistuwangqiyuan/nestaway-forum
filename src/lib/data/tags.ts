@@ -1,0 +1,36 @@
+import type { Tag } from '@/types';
+
+export const TAGS: Tag[] = [
+  { slug: 'co-working', name: { zh: 'Co-working', en: 'Co-working' }, postCount: 482, hot: true },
+  { slug: 'co-living', name: { zh: 'Co-living', en: 'Co-living' }, postCount: 360, hot: true },
+  { slug: 'visa', name: { zh: '签证', en: 'Visa' }, postCount: 624, hot: true },
+  { slug: 'budget', name: { zh: '低成本', en: 'Budget' }, postCount: 410 },
+  { slug: 'beach', name: { zh: '海滨', en: 'Beach' }, postCount: 285 },
+  { slug: 'mountain', name: { zh: '山地', en: 'Mountain' }, postCount: 196 },
+  { slug: 'foodie', name: { zh: '美食', en: 'Foodie' }, postCount: 540, hot: true },
+  { slug: 'family', name: { zh: '亲子', en: 'Family' }, postCount: 218 },
+  { slug: 'silver', name: { zh: '银发', en: 'Silver' }, postCount: 142 },
+  { slug: 'remote-work', name: { zh: '远程办公', en: 'Remote work' }, postCount: 480 },
+  { slug: 'sublet', name: { zh: '转租', en: 'Sublet' }, postCount: 190 },
+  { slug: 'roommate', name: { zh: '找室友', en: 'Roommate' }, postCount: 165 },
+  { slug: 'tax', name: { zh: '税务', en: 'Tax' }, postCount: 128 },
+  { slug: 'insurance', name: { zh: '保险', en: 'Insurance' }, postCount: 92 },
+  { slug: 'wifi', name: { zh: '网速', en: 'WiFi' }, postCount: 268, hot: true },
+  { slug: 'esim', name: { zh: 'eSIM', en: 'eSIM' }, postCount: 84 },
+  { slug: 'visa-d8', name: { zh: '葡萄牙D8', en: 'Portugal D8' }, postCount: 76 },
+  { slug: 'dtv-thailand', name: { zh: '泰国DTV', en: 'Thai DTV' }, postCount: 112, hot: true },
+  { slug: 'spain-dnv', name: { zh: '西班牙DNV', en: 'Spain DNV' }, postCount: 88 },
+  { slug: 'mexico-fmm', name: { zh: '墨西哥FMM', en: 'Mexico FMM' }, postCount: 64 },
+  { slug: 'yoga', name: { zh: '瑜伽', en: 'Yoga' }, postCount: 156 },
+  { slug: 'surf', name: { zh: '冲浪', en: 'Surf' }, postCount: 92 },
+  { slug: 'photo', name: { zh: '摄影', en: 'Photography' }, postCount: 184 },
+  { slug: 'review', name: { zh: '评测', en: 'Review' }, postCount: 320 },
+  { slug: 'meetup', name: { zh: '线下活动', en: 'Meetup' }, postCount: 248 },
+  { slug: 'guide', name: { zh: '攻略', en: 'Guide' }, postCount: 612, hot: true },
+  { slug: 'safety', name: { zh: '安全', en: 'Safety' }, postCount: 142 },
+  { slug: 'pet-friendly', name: { zh: '宠物友好', en: 'Pet friendly' }, postCount: 76 },
+  { slug: 'first-time', name: { zh: '新手', en: 'First-timer' }, postCount: 198 },
+  { slug: 'long-term', name: { zh: '长居', en: 'Long-term' }, postCount: 224 },
+];
+
+export const TAG_BY_SLUG = Object.fromEntries(TAGS.map((t) => [t.slug, t]));
