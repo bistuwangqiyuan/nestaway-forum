@@ -1,5 +1,7 @@
 [build]
   command = "npm run build"
+  # 覆盖 Netlify UI 中误设的「发布目录 = .next」；Next Runtime 由 @netlify/plugin-nextjs 接管产物。
+  publish = "."
 
 [build.environment]
   NODE_VERSION = "20"
