@@ -28,6 +28,13 @@ export function PostDetailView({ id }: { id: string }) {
     [localPosts, id],
   );
 
+  const { t, locale } = useT();
+  const { push } = useToast();
+  const liked = useReactionStore((s) => (post ? s.isLiked(post.id) : false));
+  const fav = useReactionStore((s) => (post ? s.isFavorited(post.id) : false));
+  const toggleLike = useReactionStore((s) => s.toggleLike);
+  const toggleFav = useReactionStore((s) => s.toggleFavorite);
+
   if (!post) {
     if (typeof window === 'undefined') {
       return <div className="card h-[min(60vh,480px)] animate-pulse-soft bg-slate-100 dark:bg-slate-900" />;
@@ -35,16 +42,9 @@ export function PostDetailView({ id }: { id: string }) {
     notFound();
   }
 
-  const { t, locale } = useT();
   const author = userRepo.byId(post.authorId);
   const comments = commentRepo.byPost(post.id);
   const related = postRepo.related(post, 4);
-  const { push } = useToast();
-
-  const liked = useReactionStore((s) => s.isLiked(post.id));
-  const fav = useReactionStore((s) => s.isFavorited(post.id));
-  const toggleLike = useReactionStore((s) => s.toggleLike);
-  const toggleFav = useReactionStore((s) => s.toggleFavorite);
 
   const likeCount = post.stats.likes + (liked ? 1 : 0);
   const favCount = post.stats.favorites + (fav ? 1 : 0);
